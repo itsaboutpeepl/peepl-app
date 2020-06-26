@@ -1,0 +1,36 @@
+---
+layout: default
+permalink: /topup/
+---
+
+<div class="container pt-2 pb-5">
+    <div class="peepl-topup">
+        <p class="mx-auto" style="max-width: 12em">
+            To top up your wallet,
+            make a bank transfer to:
+        </p>
+        <h2>Account number</h2>
+        <pre>01234567</pre>
+        <h2>Sort code</h2>
+        <pre>01-23-45</pre>
+        <h2>Payment reference</h2>
+        <pre class="js-wallet-reference"></pre>
+        <button class="btn btn-link btn-block btn-sms js-show-sms-details">
+            {% include icons/sms.html %}
+            Text me these details
+        </button>
+        <form class="peepl-topup__sms-details">
+            <p class="js-hide-sms-details">
+                <code>01234567</code>
+                <code>01-23-45</code>
+                <code class="js-wallet-reference"></code>
+            </p>
+            <div class="form-group">
+                <label for="tel">Your phone number</label>
+                <input type="text" inputmode="numeric" pattern="[0-9]*" id="tel" class="form-control form-control-lg" aria-describedby="smsHelp" required>
+                <small id="smsHelp" class="form-text text-muted">We won’t store this, or share it with anyone.</small>
+            </div>
+            <button type="submit" class="btn btn-lg btn-block btn-peepl">Send SMS</button>
+        </form>
+    </div>
+</div>
