@@ -54,3 +54,50 @@
         display: block;
     }
 }
+
+.js-sms-details {
+    .btn-sending-sms {
+        display: none;
+        cursor: auto;
+
+        .spinner-border {
+            vertical-align: 0;
+            margin-right: 0.3em;
+        }
+    }
+
+    .btn-sent-sms {
+        display: none;
+        cursor: auto;
+
+        svg {
+            width: 27px;
+            height: 27px;
+            color: inherit;
+            vertical-align: -7px;
+            margin-right: 4px;
+        }
+    }
+
+    &.sending {
+        .btn-send-sms,
+        .btn-sent-sms {
+            display: none;
+        }
+
+        .btn-sending-sms {
+            display: block;
+        }
+    }
+
+    &.sent {
+        .btn-send-sms,
+        .btn-sending-sms {
+            display: none;
+        }
+
+        .btn-sent-sms {
+            display: block;
+        }
+    }
+}

@@ -19,7 +19,7 @@ permalink: /topup/
             {% include icons/sms.html %}
             Text me these details
         </button>
-        <form class="peepl-topup__sms-details">
+        <form class="peepl-topup__sms-details js-sms-details">
             <p class="js-hide-sms-details">
                 <code>01234567</code>
                 <code>01-23-45</code>
@@ -27,10 +27,18 @@ permalink: /topup/
             </p>
             <div class="form-group">
                 <label for="tel">Your phone number</label>
-                <input type="text" inputmode="numeric" pattern="[0-9]*" id="tel" class="form-control form-control-lg" aria-describedby="smsHelp" required>
+                <input type="text" inputmode="numeric" pattern="[0-9+]*" id="tel" class="form-control form-control-lg" aria-describedby="smsHelp" required>
                 <small id="smsHelp" class="form-text text-muted">We won’t store this, or share it with anyone.</small>
             </div>
-            <button type="submit" class="btn btn-lg btn-block btn-peepl">Send SMS</button>
+            <button type="submit" class="btn btn-lg btn-block btn-peepl btn-send-sms mb-3">Send SMS</button>
+            <div class="btn btn-lg btn-block btn-peepl disabled btn-sending-sms mb-3" role="status">
+                <span class="spinner-border spinner-border-sm"></span>
+                Sending SMS…
+            </div>
+            <div class="btn btn-lg btn-block btn-success btn-sent-sms mb-3" role="status">
+                {% include icons/check.html %}
+                SMS sent!
+            </div>
         </form>
     </div>
 </div>
