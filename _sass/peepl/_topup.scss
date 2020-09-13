@@ -46,7 +46,8 @@
 .peepl-topup--sms {
     h2,
     pre,
-    .btn-sms {
+    .btn-sms,
+    .peepl-budget {
         display: none;
     }
 
@@ -99,5 +100,15 @@
         .btn-sent-sms {
             display: block;
         }
+    }
+}
+
+.peepl-budget {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid $border-color;
+
+    h2 {
+        font-weight: bold;
     }
 }
