@@ -1,5 +1,6 @@
 var urlParams = new URLSearchParams(window.location.search);
 var wallet = urlParams.get('wallet') || '0xd72625cca6d607b8fa5106552c2f08690b3c4356';
+var wallet = urlParams.get('wallet') || '0x0000000000000000000000000000000000000123';
 var walletSnippet = wallet.substring(wallet.length - 6);
 var url = 'https://h43v4kftw0.execute-api.eu-west-1.amazonaws.com/test/sendsms';
 
@@ -59,6 +60,25 @@ jQuery(function ($) {
             },
             success: smsSuccess,
             error: smsError
+        });
+    });
+
+    $('.js-peepl-airdrop').each(function(){
+        var $el = $(this);
+        $.ajax({
+            url: '/airdrop.json',
+            dataType: 'json'
+        }).done(function(data){
+            var results = $.grep(data, function(obj){
+                return obj.wallet === wallet;
+            });
+            if ( results.length ) {
+                $el.removeClass('d-none');
+            } else {
+                $el.addClass('d-none');
+            }
+        }).fail(function(){
+            $el.addClass('d-none');
         });
     });
 });

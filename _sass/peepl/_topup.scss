@@ -112,3 +112,25 @@
         font-weight: bold;
     }
 }
+
+.peepl-airdrop {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: $border-radius;
+    background: $yellow linear-gradient(0deg, $yellow, mix($yellow, #fff, 75%));
+    box-shadow: 0 0.5rem 1rem rgba(#000, 0.1), 0 1rem 2rem -0.5rem mix($yellow, #fff, 50%);
+
+    h2 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
